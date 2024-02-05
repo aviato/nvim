@@ -15,6 +15,30 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
-require("lazy").setup("plugins")
+require("lazy").setup({
+  spec = {
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "plugins" },
+  },
+  install = {
+    colorscheme = {
+      "jellybeans-nvim",
+      "noctishc",
+    }
+  },
+  checker = { enabled = true }, -- automatically checks for updates
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      }
+    }
+  }
+})
+
 require("settings")
 require("keymaps")
