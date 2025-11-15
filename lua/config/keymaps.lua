@@ -18,14 +18,19 @@ vim.keymap.set("n", "<leader>fw", function()
   end
 end, { desc = "Find word under cursor (initial project only)" })
 
+-- Keymaps to copy the relative file path to the clipboard
 vim.keymap.set("n", "<leader>yrp", function()
   local relative_path = vim.fn.expand("%")
   vim.fn.setreg("+", relative_path)
   vim.notify("Copied relative path: " .. (relative_path == "" and "[No file]" or relative_path))
 end, { desc = "Copy relative file path" })
 
+-- Keymaps to copy the absolute file path to the clipboard
 vim.keymap.set("n", "<leader>yap", function()
   local absolute_path = vim.fn.expand("%:p")
   vim.fn.setreg("+", absolute_path)
   vim.notify("Copied absolute path: " .. absolute_path)
 end, { desc = "Copy absolute file path" })
+
+-- Remap K (hover) to <leader>k
+vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover Documentation" })

@@ -1,19 +1,10 @@
 return {
   {
-    "ellisonleao/gruvbox.nvim", -- or whatever colorscheme you're using
+    "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
   },
-
-  -- Monokai theme
-  {
-    "tanvirtin/monokai.nvim",
-  },
-
-  -- Jellybeans theme
-  {
-    "nanotech/jellybeans.vim",
-    lazy = false,
-    priority = 1000,
-  },
+  { "tanvirtin/monokai.nvim" },
+  { "nanotech/jellybeans.vim" },
+  { "projekt0n/github-nvim-theme" },
 }
